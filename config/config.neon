@@ -1,0 +1,18 @@
+extensions:
+	modette.http.frontRouter: Modette\Http\FrontRouter\DI\FrontRouterExtension
+
+flysystem:
+	filesystem:
+		public:
+			adapter:
+				factory: League\Flysystem\Adapter\Local
+				arguments: [%storage.publicDir%]
+			autowired: false
+
+parameters:
+	publicDir: %rootDir%/public
+	storage:
+		publicDir: %rootDir%/public/data
+
+php:
+	output_buffering: 4096
